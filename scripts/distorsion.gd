@@ -17,18 +17,13 @@ func _ready():
 	var amplitud = lerp(aMin, aMax, momento)
 	material.set_shader_parameter("amplitud", amplitud)
 	material.set_shader_parameter("momento", momento)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
-	# Este if esta para testear el shader, borralo si lo necesitas
-	if Input.is_action_just_pressed("ui_accept"):
-		momento = 0.0
-
 	var amplitud = lerp(aMin, aMax, momento / long)
 	material.set_shader_parameter("amplitud", amplitud)
 	material.set_shader_parameter("momento", momento)
 	momento += delta * long * velocidad
-	pass
+	if momento >= 2.5:
+		self.queue_free()

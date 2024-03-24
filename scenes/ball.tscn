@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgbu2w1yb3vh2"]
+[gd_scene load_steps=10 format=3 uid="uid://bgbu2w1yb3vh2"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://boa2rnkyfo6s7" path="res://materials/bouncing_ball.tres" id="1_mu4ie"]
 [ext_resource type="Script" path="res://scripts/ball.gd" id="2_0h4mw"]
 [ext_resource type="Texture2D" uid="uid://b33tb0rhofdll" path="res://assets/ball_blue_small_alt.png" id="2_y0p1k"]
 [ext_resource type="PackedScene" uid="uid://c6avgu3txa1mg" path="res://scenes/points.tscn" id="3_a2x6w"]
+[ext_resource type="PackedScene" uid="uid://bm5mr4tnbkn7g" path="res://scenes/power_hit.tscn" id="4_fqjw8"]
 [ext_resource type="AudioStream" uid="uid://djdnixlt2wsk" path="res://audio/select_006.ogg" id="5_cgd3x"]
 
 [sub_resource type="Gradient" id="Gradient_erxuc"]
@@ -27,6 +28,7 @@ script = ExtResource("2_0h4mw")
 line_gradient = SubResource("Gradient_erxuc")
 line_width = SubResource("Curve_3j0fu")
 points_prefab = ExtResource("3_a2x6w")
+power_hit_effect = ExtResource("4_fqjw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm5mr4tnbkn7g"]
+
+[ext_resource type="Shader" path="res://scripts/distorsionGolpe.gdshader" id="1_ubupw"]
+[ext_resource type="Texture2D" uid="uid://bi1u42gf0l26o" path="res://icon.svg" id="2_sq23p"]
+[ext_resource type="Script" path="res://scripts/distorsion.gd" id="3_55x26"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ximmu"]
+shader = ExtResource("1_ubupw")
+shader_parameter/amplitud = 1.0
+shader_parameter/momento = 0.0
+shader_parameter/inicio = 0.0
+shader_parameter/final = -1.5
+
+[node name="PowerHit" type="Sprite2D"]
+material = SubResource("ShaderMaterial_ximmu")
+position = Vector2(514, 366)
+texture = ExtResource("2_sq23p")
+script = ExtResource("3_55x26")

@@ -5,6 +5,7 @@ extends RigidBody2D
 @export var line_gradient : Gradient
 @export var line_width : Curve
 @export var points_prefab : PackedScene
+@export var power_hit_effect : PackedScene
 var trail : Line2D
 var time_since_last_hit : float = 0.0
 
@@ -46,6 +47,10 @@ func _on_body_entered(body):
 	# If the block is a power block, add force
 	if body.is_in_group("power"):
 		self.linear_velocity = self.linear_velocity * 1.2
+		# Effect
+		var powerhit = power_hit_effect.instantiate()
+		powerhit.global_position = self.global_position
+		get_parent().add_child(powerhit)
 	# Make sound
 	$Bling.play()
 
